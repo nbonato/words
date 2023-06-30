@@ -1,3 +1,9 @@
+let latestVersion = 0.2;
+if (localStorage.getItem("version") != latestVersion) {
+    localStorage. clear();
+    localStorage.setItem("version", latestVersion);
+};
+
 const startDate = new Date('2023-06-26'); // Set your desired starting date
 const currentDate = new Date(); // Get the current date
 
@@ -24,11 +30,7 @@ const buttons = document.getElementsByClassName("calc-btn");
 let streakModal = document.getElementById("streak");
 let streakText = document.getElementById("streak-text");
 
-let latestVersion = 0.1;
-if (localStorage.getItem("version") != latestVersion) {
-    localStorage. clear();
-    localStorage.setItem("version", latestVersion);
-};
+
 
 
 
