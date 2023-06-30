@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="words.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
-    <script src="main.js" defer></script>
+    <script src="word_list.js" defer></script>
+    <script src="combinations.js" defer></script>
+    <script src="words.js" defer></script>
     <title>Words, words, words</title>
 </head>
 <body>
     <div class="container">
         <div class="intro">
             <h1>Words, words, words</h1>
-            You can only change one letter per line, and each line should be a real word.
+            You can only change <p class="highlight">one letter per line</p> and each line should be <p class="highlight">a real word</p>. <br>
+            To get to the final word, you must use <p class="highlight">all four lines</p>. <br>Good luck!
         </div>
         <div id="popup" class="popup"></div>
+        <dialog id="streak">
+            <p id="streak-text">Greetings, one and all!</p>
+            <form method="dialog">
+              <button>&times;</button>
+            </form>
+          </dialog>
         <div class="game">
             <div class="letters" id="start"></div>
             <div class="letters" id="guesses"></div>
