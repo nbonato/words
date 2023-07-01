@@ -241,7 +241,7 @@ for (let keyName of keyLayout) {
             cell.textContent = keyName;
             break;
     };
-    cell.addEventListener("click", function() {
+    cell.addEventListener("pointerdown", function() {
         let keyInput = this.textContent;
         if (keyInput == "check_circle") {
             keyInput = "ENTER";
@@ -251,8 +251,13 @@ for (let keyName of keyLayout) {
     keyboard.appendChild(cell);
 }
 
-let buttonsStored = localStorage.getItem("buttonsStorage").split(",");
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].textContent = buttonsStored[i];
-    buttons[i].classList.add('btn-greyed');
+
+// Check if user has already played today
+if (daysElapsed - localStorage.getItem("latestPlay") == 0) {
+    let buttonsStored = localStorage.getItem("buttonsStorage").split(",");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].textContent = buttonsStored[i];
+        buttons[i].classList.add('btn-greyed');
+    };
 };
+
