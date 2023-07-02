@@ -1,4 +1,4 @@
-let latestVersion = 0.2;
+let latestVersion = 0.3;
 if (localStorage.getItem("version") != latestVersion) {
     localStorage. clear();
     localStorage.setItem("version", latestVersion);
@@ -142,7 +142,7 @@ function parseKey(pressedKey) {
                         showPopup("You won!");
                         localStorage.setItem("dailyWins", parseInt(localStorage.getItem("dailyWins"))+1);
                         localStorage.setItem("latestPlay", daysElapsed);
-                        streakText.textContent = `You have played for ${localStorage.getItem("daysPlayed")} days, winning ${localStorage.getItem("dailyWins")} out of them.`;
+                        streakText.textContent = `You have played for ${localStorage.getItem("daysPlayed")} days, winning ${localStorage.getItem("dailyWins")} out of them. The game has been going on for ${daysElapsed} days.`;
                         streakModal.showModal();
                     };
                 } else {
