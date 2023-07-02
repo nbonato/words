@@ -129,9 +129,8 @@ function parseKey(pressedKey) {
     if (pressedKey == "ENTER") {
         if (guessIndex % 4 == 0 && guessIndex != 0) {
             if (guessIndex == 16) {
-                let msPlayed = currentDate.getTime() - parseInt(localStorage.getItem("firstPlay"));
-                let daysPlayed = Math.floor(msPlayed / (1000 * 60 * 60 * 24))
-                localStorage.setItem("daysPlayed", daysPlayed+1);
+
+                localStorage.setItem("daysPlayed", parseInt(localStorage.getItem("daysPlayed"))+1);
                 if (checkGuess(guessedWord, words[5])) {
                     if (guessIndex == 16) {
                         let buttonsStorage = [];
